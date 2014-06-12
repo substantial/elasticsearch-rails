@@ -34,6 +34,15 @@ module Elasticsearch
           response.response['hits']['hits'].map { |hit| hit['_id'] }
         end
 
+
+        # Returns the hit IDs with type
+        #
+        def ids_with_type
+          response.response['hits']['hits'].map do |hit|
+            { id: hit['_id'], type: hit['_type']}
+          end
+        end
+
         # Returns the {Results} collection
         #
         def results

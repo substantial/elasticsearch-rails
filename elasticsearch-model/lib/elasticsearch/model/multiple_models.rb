@@ -1,6 +1,5 @@
 module Elasticsearch
   module Model
-
     class MultipleModels < Array
       def initialize(models=[])
         models = models.empty? ? __searchable_models : models
